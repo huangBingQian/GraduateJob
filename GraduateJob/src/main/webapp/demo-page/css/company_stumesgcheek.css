@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+
+label{
+	text-align: right;
+}
+
+.content{
+	height: 800px;
+}
+
+.stu_photo{
+	margin-left: 50px;
+	margin-top: 30px;
+	width: 150px;
+	height: 200px;
+}
+
+.mesg{
+	display: flex;
+	flex-direction:row;
+
+}
+.stu_photo {
+	float:left;
+}
+
+.basic_msg{
+	padding-top:60px;
+	margin-left:350px;
+}
+
+.left_msg{
+	clear: left;
+	float: left;
+	margin-top: 80px;
+	margin-left : 50px;
+}
+
+.resume_msg{
+	margin-top: 80px;
+	float: left;
+	margin-left:150px;
+}
+
+}

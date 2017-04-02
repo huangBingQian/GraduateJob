@@ -1,0 +1,123 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+}
+.first{
+    width:100%;
+    height: -10px;
+    background-color:#284597;
+	position:fixed;
+	top:0px;
+}
+
+.third{
+    width:100%;
+    height:100%;
+    padding:0;
+    background:url(../image/bg.png) no-repeat;
+	background-attachment:fixed;
+    background-color:#14142C;
+}
+.third_main{
+	margin-top:100px;
+	margin-bottom:100px;
+    width:70%;
+	height:100%;
+    background-color:#FFF;
+    position:relative;
+    left:180px;
+	top :230px;
+	overflow:hidden;
+}
+.main_left{
+    width:30%;
+    background-color:#F0F0EE;
+	display:inline-block;
+}
+.main_left img{
+    margin:12px 84px 0 84px;
+}
+.main_left p{
+    text-align: center;
+    margin-top:10px;
+    font-size:16px;
+    font-weight:bold;
+    color:#4F9FDE;
+}
+.main_left span{
+    margin-top:5px;
+    font-weight:normal;
+}
+.main_left a:visited,.main_left a:link{
+    color:#000;
+}
+.main_left ul{
+    margin-top:20px;
+}
+.left_bottom li{
+    list-style-type:none;
+    height:70px;
+    line-height:70px;
+    text-align:center;
+    background-color:#FFF;
+    border:1px solid #999;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size:20px;
+    font-family:"΢���ź�";
+    color:#333333;
+}
+.left_bottom a{
+    text-decoration:none;
+}
+.left_bottom a:hover,.left_bottom a:active{
+    color:#5e5e5e;
+}
+.main_right{
+	display:inline-block;
+	width:66%;
+	height:100%;
+	float:right;
+	padding-top:10px;
+}
+.main_right table{
+	table-layout:fixed;
+	word-break:break-all;
+	width:95%;
+	padding-left:50px;
+	padding-top:20px;
+}
+.main_right tr{
+	width:100%;
+	height:25px;
+	border-bottom:1px solid black;
+}
+.main_right tr,.main_right td{
+	border-bottom:1px solid black;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.main_right td{
+	height:100%;
+	text-overflow:ellipsis;
+}
+.wrap{
+	width:500px;
+	margin:0 auto;
+	overflow:hidden;
+	*zoom:1;
+	text-align:center;
+}
+ #mydiv li{
+	 display:none;
+	 float:left;
+	 margin-left:50px;
+	 margin-top:20px;
+}
+ 
+#changpage{
+	clear:both;
+	text-align:center;
+}

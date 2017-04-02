@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.IndustrylistMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.Industrylist" >
+    <id column="industryId" property="industryid" jdbcType="INTEGER" />
+    <result column="industry" property="industry" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    industryId, industry
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.IndustrylistExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from industrylist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from industrylist
+    where industryId = #{industryid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from industrylist
+    where industryId = #{industryid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.IndustrylistExample" >
+    delete from industrylist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.Industrylist" >
+    insert into industrylist (industryId, industry)
+    values (#{industryid,jdbcType=INTEGER}, #{industry,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.Industrylist" >
+    insert into industrylist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="industryid != null" >
+        industryId,
+      </if>
+      <if test="industry != null" >
+        industry,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="industryid != null" >
+        #{industryid,jdbcType=INTEGER},
+      </if>
+      <if test="industry != null" >
+        #{industry,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.IndustrylistExample" resultType="java.lang.Integer" >
+    select count(*) from industrylist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update industrylist
+    <set >
+      <if test="record.industryid != null" >
+        industryId = #{record.industryid,jdbcType=INTEGER},
+      </if>
+      <if test="record.industry != null" >
+        industry = #{record.industry,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update industrylist
+    set industryId = #{record.industryid,jdbcType=INTEGER},
+      industry = #{record.industry,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="teamB.GraduateJob.po.Industrylist" >
+    update industrylist
+    <set >
+      <if test="industry != null" >
+        industry = #{industry,jdbcType=CHAR},
+      </if>
+    </set>
+    where industryId = #{industryid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="teamB.GraduateJob.po.Industrylist" >
+    update industrylist
+    set industry = #{industry,jdbcType=CHAR}
+    where industryId = #{industryid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+
+    
+
+    .page-middle .content .row{
+        display: flex;
+        flex-direction: row;
+        margin: 30px 50px;
+    }
+
+    .page-middle .content .line{
+        display: flex;
+        width: 40%;
+        flex-direction: row;
+        margin-left:10%;
+    }
+
+
+    .metmsg {
+        margin-left:15%;
+        margin-bottom: 15px;
+    }
+
+    .metmsg .number label {
+        display: inline-block;
+        width: 150px;
+    }
+
+    .number input {
+        flex: 1 1 auto;
+        height: 23px;
+        outline: none;
+        border-radius: 0px;
+        border: 1px solid gray;
+        font-size: 15px;
+        padding-left: 2px;
+    }
+
+    .need {
+        margin-left:15%;
+        margin-top: -20px;
+    }
+    .need .btn-group{
+        margin-left: 540px;
+        margin-bottom: -30px;
+    }
+    .need table{
+        margin-top: 30px;
+        width:40vw;
+        max-width: 700px;
+        min-width: 600px;
+    }
+
+    .need tr{
+        height: 27px;
+    }
+
+    select {  
+      border:0px solid #cccccc;  
+      float: right;  
+      display: inline;  
+      margin: 0;  
+      padding: 0;  
+      width: 100%;
+    }  
+
+    .b1utton {
+        border: 1px;
+        border-radius: 0px;
+        background: white;
+        width: 25px;
+        height: 25px;
+        color: black;
+        cursor: pointer;
+        outline: none;
+    }
+    .edit-area{
+        min-height: 26px;
+        overflow: visible;
+        width: 700px;
+        padding-left: 10px;
+    }
+    .need .td1 {
+        width:30%;
+        background-color: rgb(243,243,243);
+    }
+    .need .double label{
+        border-right: 1px solid #000000;
+        padding: 1px 4px;
+        margin-bottom: 0;
+        height: 27px;
+    }
+    .need .td2 {
+        width:30%;
+        background-color: rgb(255,255,255);
+    }
+
+    #form-template{
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 50px;
+        border-bottom: 1px solid #D0D0D0;
+    }
+
+    .navbar-header {
+        padding-left: 15px;
+    }
+
+    .navbar-header img {
+        padding-top: 10px;
+        margin-right: 55px;
+        height: 40px;
+        width: auto;
+    }
+
+    .navbar ul li {
+        font-size: 20px;
+        line-height: 55px;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+
+
+    .navbar ul li a {
+        color: #074fc9;
+        font-weight: 600;
+    }
+
+    .navbar .user {
+        font-size: 16px;
+        float: right!important;
+    }
+    .navbar .user span {
+        margin-bottom: 4px;
+    }
+    .navbar .user img{
+        height: 14px;
+        width: auto;
+    }
+    .page-middle{
+        margin-top: 110px;
+        background-color: #f8f8f8;
+        border: 1px solid #D0D0D0;
+    }
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 60px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #0754da;
+    }
+
+}
+
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- <title>Jumbotron Template for Bootstrap</title>  -->
+    <title>学生搜索</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/CompanayPublicCss.css">
+    <link rel="stylesheet" href="css/company_stusearch.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $("#ass").removeClass("active")
+        $(document).ready(function(){
+            var tipsList = new Array();
+            $("body").on("click",".selceted div a", function () {
+                var tips = event.target.text
+                var text = tips.substring(0, tips.length - 2)
+                event.target.remove()
+                var $nodes = $(".selcet a")
+                for(var i in $nodes){
+                    var s = $nodes[i].text
+                    if(s == text){
+                        $(".selcet a:eq("+i+")").removeClass("active")
+                    }
+                }
+                removeByValue(tipsList, text)
+
+            })
+
+            $(".selcet a").click(function () {
+                var tips = event.target.text
+                tips = tips.toString()
+                var notExist = true
+                for(var i in tipsList){
+                    if(tipsList[i] == tips){
+                        notExist = false
+                    }
+                }
+                if(notExist){
+                    $(".selceted div").append("<a class='active'>" + tips + "&nbsp×</a>")
+                    $(this).addClass("active")
+                    tipsList.push(tips)
+
+                   $.ajax({
+                       type: "post",
+                       url: "", //要填的controller的url
+                       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+                       data:{
+                           "tipsList": tipsList
+                       },
+                       success: function(resultList){
+                             业务逻辑
+                       }
+                   });
+                }
+
+            })
+
+        })
+        function removeByValue(arr, val) {
+            for(var i=0; i<arr.length; i++) {
+                if(arr[i] == val) {
+                    arr.splice(i, 1);
+                    break;
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top GJ-navbar" role="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img alt="Brand" src="image/logo.png">
+
+            </div>
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">企业主页</a></li>
+                    <li><a href="#">通知消息</a></li>
+                    <li><a href="#">学生搜索</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container page-middle">
+    <div class="row">
+        <div class="left">
+            <div class="clearfix">
+                <img src="image/jobicon.png">
+                <span class="company-name">网易</span>
+                <a href="#" class="company-website">www.163.com</a>
+                <ul class="left-menu">
+                    <li><a href="#">基本信息填写</a></li>
+                    <li><a href="#">招聘信息填写</a></li>
+                    <li><a href="#">宣讲会发起/查看</a></li>
+                    <li><a href="#">招聘会参与</a></li>
+                    <li><a href="#">面试/offer情况</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="selrev">
+                <div class="selceted">
+                    <label>已选条件</label>
+                    <div>
+                    </div>
+                </div>
+                <div class="selcet">
+                    <label>毕业年份</label>
+                    <a>2016</a>
+                    <a>2017</a>
+                    <a>2018</a>
+                </div>
+                <div class="selcet">
+                    <label>学院</label>
+                    <a>计算机学院</a>
+                    <a>会计学院</a>
+                    <a>外国语学院</a>
+                    <a>电子学院</a>
+                    <a hraf="#"> 更多>> </a>
+                </div>
+                <div class="selcet">
+                    <label>成绩分布</label>
+                    <a>前30%</a>
+                    <a>前50%</a>
+                    <a>30%-50%</a>
+                    <a>50%-70%</a>
+                    <a>70%以后</a>
+                </div>
+                <div class="selcet">
+                    <label>专业</label>
+                    <a>计算机科学与技术</a>
+                    <a>网络工程</a>
+                    <a>物联网</a>
+                    <a>海洋工程与技术</a>
+                    <a hraf="#">更多>> </a>
+                </div>
+            </div>
+            <hr class="hr1"/>
+            <div class="selresult">
+                <table class="stumessage">
+                    <tr>
+                        <td><label>姓名</label></td>
+                        <td><label>学院</label></td>
+                        <td><label>成绩</label></td>
+                        <td><label>毕业年份</label></td>
+                        <td><label>专业</label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>张三</td>
+                        <td>计算机学院</td>
+                        <td>前30%</td>
+                        <td>2016</td>
+                        <td>计算机科学与技术</td>
+                        <td><a hraf="#">详细信息</a></td>
+                    </tr>
+                    <tr>
+                        <td>张三四</td>
+                        <td>软件工程学院</td>
+                        <td>30%-50%</td>
+                        <td>2016</td>
+                        <td>物联网</td>
+                        <td><a hraf="#">详细信息</a></td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container-fluid page-end">
+
+    <p class="text-center">版权申明</p>
+</div>
+</body>
+</html>

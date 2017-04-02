@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="TeamB.GraduateJob.dao.mapper.homepageJoblistMapper" >
+  <resultMap id="BaseResultMap" type="TeamB.GraduateJob.po.homepageJoblist" >
+    <result column="jobName" property="jobname" jdbcType="VARCHAR" />
+    <result column="companyName" property="companyname" jdbcType="VARCHAR" />
+    <result column="pay" property="pay" jdbcType="VARCHAR" />
+    <result column="workPlace" property="workplace" jdbcType="VARCHAR" />
+    <result column="jobid" property="jobid" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="logoURL" property="logourl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    jobName, companyName, pay, workPlace, jobid, type, logoURL
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="TeamB.GraduateJob.po.homepageJoblistExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from stuhomepagejoblist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="TeamB.GraduateJob.po.homepageJoblistExample" >
+    delete from stuhomepagejoblist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="TeamB.GraduateJob.po.homepageJoblist" >
+    insert into stuhomepagejoblist (jobName, companyName, pay, 
+      workPlace, jobid, type, 
+      logoURL)
+    values (#{jobname,jdbcType=VARCHAR}, #{companyname,jdbcType=VARCHAR}, #{pay,jdbcType=VARCHAR}, 
+      #{workplace,jdbcType=VARCHAR}, #{jobid,jdbcType=VARCHAR}, #{type,jdbcType=CHAR}, 
+      #{logourl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="TeamB.GraduateJob.po.homepageJoblist" >
+    insert into stuhomepagejoblist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jobname != null" >
+        jobName,
+      </if>
+      <if test="companyname != null" >
+        companyName,
+      </if>
+      <if test="pay != null" >
+        pay,
+      </if>
+      <if test="workplace != null" >
+        workPlace,
+      </if>
+      <if test="jobid != null" >
+        jobid,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="logourl != null" >
+        logoURL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jobname != null" >
+        #{jobname,jdbcType=VARCHAR},
+      </if>
+      <if test="companyname != null" >
+        #{companyname,jdbcType=VARCHAR},
+      </if>
+      <if test="pay != null" >
+        #{pay,jdbcType=VARCHAR},
+      </if>
+      <if test="workplace != null" >
+        #{workplace,jdbcType=VARCHAR},
+      </if>
+      <if test="jobid != null" >
+        #{jobid,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="logourl != null" >
+        #{logourl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="TeamB.GraduateJob.po.homepageJoblistExample" resultType="java.lang.Integer" >
+    select count(*) from stuhomepagejoblist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update stuhomepagejoblist
+    <set >
+      <if test="record.jobname != null" >
+        jobName = #{record.jobname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyname != null" >
+        companyName = #{record.companyname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pay != null" >
+        pay = #{record.pay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workplace != null" >
+        workPlace = #{record.workplace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jobid != null" >
+        jobid = #{record.jobid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=CHAR},
+      </if>
+      <if test="record.logourl != null" >
+        logoURL = #{record.logourl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update stuhomepagejoblist
+    set jobName = #{record.jobname,jdbcType=VARCHAR},
+      companyName = #{record.companyname,jdbcType=VARCHAR},
+      pay = #{record.pay,jdbcType=VARCHAR},
+      workPlace = #{record.workplace,jdbcType=VARCHAR},
+      jobid = #{record.jobid,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=CHAR},
+      logoURL = #{record.logourl,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

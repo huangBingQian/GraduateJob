@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.top{
+	color:rgba(101,101,101,1.00);
+	background-color:rgba(234,234,234,1.00);
+	border-top:0;
+	padding:10px;
+}
+.right_head{
+	width:99.9%;
+	padding-top:5px;
+	padding-left:10px;
+	padding-bottom:1px;
+	margin-bottom:20px;
+	background:rgba(240,240,238,1.00);
+}
+.basic{
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.basic table{
+	clear:both;
+	margin-left:48px;
+}
+.basic td{
+	height:35px;
+	padding-left:20px;
+	width:150px;
+}
+.basic td p{
+	display:inline-block;
+	margin-left:20px;
+}
+.basic th{
+	height:150px;
+	width:120px;
+}
+.job-intention{
+	padding-top:20px;
+}
+.job-intention table{
+	display:inline-block;
+	margin-left:50px;
+	margin-right:110px;
+	margin-bottom:10px;
+	padding:10px;
+}
+.job-intention tr,.job-intention td{
+	padding-right:20px;
+	padding-bottom:20px;
+}

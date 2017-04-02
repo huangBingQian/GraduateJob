@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.CompanycharacterlistMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.Companycharacterlist" >
+    <id column="companyCharacterid" property="companycharacterid" jdbcType="INTEGER" />
+    <result column="companyCharacter" property="companycharacter" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    companyCharacterid, companyCharacter
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.CompanycharacterlistExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from companycharacterlist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from companycharacterlist
+    where companyCharacterid = #{companycharacterid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from companycharacterlist
+    where companyCharacterid = #{companycharacterid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.CompanycharacterlistExample" >
+    delete from companycharacterlist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.Companycharacterlist" >
+    insert into companycharacterlist (companyCharacterid, companyCharacter
+      )
+    values (#{companycharacterid,jdbcType=INTEGER}, #{companycharacter,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.Companycharacterlist" >
+    insert into companycharacterlist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="companycharacterid != null" >
+        companyCharacterid,
+      </if>
+      <if test="companycharacter != null" >
+        companyCharacter,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="companycharacterid != null" >
+        #{companycharacterid,jdbcType=INTEGER},
+      </if>
+      <if test="companycharacter != null" >
+        #{companycharacter,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.CompanycharacterlistExample" resultType="java.lang.Integer" >
+    select count(*) from companycharacterlist
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update companycharacterlist
+    <set >
+      <if test="record.companycharacterid != null" >
+        companyCharacterid = #{record.companycharacterid,jdbcType=INTEGER},
+      </if>
+      <if test="record.companycharacter != null" >
+        companyCharacter = #{record.companycharacter,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update companycharacterlist
+    set companyCharacterid = #{record.companycharacterid,jdbcType=INTEGER},
+      companyCharacter = #{record.companycharacter,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="teamB.GraduateJob.po.Companycharacterlist" >
+    update companycharacterlist
+    <set >
+      <if test="companycharacter != null" >
+        companyCharacter = #{companycharacter,jdbcType=CHAR},
+      </if>
+    </set>
+    where companyCharacterid = #{companycharacterid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="teamB.GraduateJob.po.Companycharacterlist" >
+    update companycharacterlist
+    set companyCharacter = #{companycharacter,jdbcType=CHAR}
+    where companyCharacterid = #{companycharacterid,jdbcType=INTEGER}
+  </update>
+</mapper>

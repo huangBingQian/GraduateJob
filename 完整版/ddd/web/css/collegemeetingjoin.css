@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+
+
+
+.content{
+    height: 900px;
+}
+.address{
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.addd{
+    padding-top: 10px;
+    padding-left: 10px
+}
+
+.condition{
+    margin-top: 40px;
+    width: 85%;
+    height: 300px;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tittt{
+    padding-top: 10px;
+    margin-top: auto;
+}
+
+
+.first {
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.second {
+    height:200px;
+    background-color: #f9f9f9;
+    padding-top: 30px;
+    padding: 30px;
+}
+
+.clno .tech .time {
+    padding-top: 30px;
+}
+
+.second a{
+    padding-left: 20px;
+}
+
+
+.message{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.msgtable td{
+    width:18%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.msgtable tr{
+    height: 30px;
+}
+
+.third-line {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.third-line button {
+        border: 0;
+        margin: 0 10px;
+        border-radius: 5px;
+        background: white;
+        width: 50px;
+        height: 23px;
+        color: black;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+    }
+
+
+.third-line input{
+    background-color: white;
+    width: 100px;
+}
+
+.button-c button {
+        border: 0;
+        margin: 0 10px;
+        border-radius: 5px;
+        background: white;
+        width: 50px;
+        height: 23px;
+        color: black;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+    }
+
+.time button {
+    border: 0;
+    margin: 0 10px;
+    border-radius: 5px;
+    background: white;
+    width: 50px;
+    height: 23px;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+}
+
+
+}

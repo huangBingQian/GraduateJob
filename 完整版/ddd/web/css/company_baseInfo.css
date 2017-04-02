@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+    .page-middle .content {
+        float: right;
+        margin-top: 60px;
+        width: 910px;
+        height: 900px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+
+    }
+
+    .page-middle .content form {
+        width: 600px;
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+
+    .page-middle .content form .edit-area {
+        margin-top: 45px;
+        margin-left: 65px;
+        width: 600px;
+        height: 150px;
+        font-size: 16px;
+    }
+    .page-middle .content form .company-info {
+        margin-top: 45px;
+        margin-left: 65px;
+        width: 600px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .page-middle .content form .lab {
+        color: #14a5d9;
+        font-size: 20px;
+        border-bottom: 1px dashed #aeaeae;
+        margin-left: -20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .page-middle .content form .lab span {
+        float: right;
+        color: #979797;
+        font-size: 18px;
+        margin-top: 3px;
+    }
+    .page-middle .content form .lab span:hover {
+        color: #707070;
+        cursor: pointer;
+    }
+
+    .page-middle .content form input {
+        width: 300px;
+    }
+
+    .page-middle .content form select {
+        width: 300px;
+    }
+    .page-middle .content form .info > .form-group >label:nth-child(2){
+        text-align: left;
+        font-weight: 500;
+        padding-left: 0;
+    }
+    .page-middle .content form .btn {
+        margin: 30px auto auto -15px;
+        width: 80px;
+    }
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 50px;
+        border-bottom: 1px solid #D0D0D0;
+    }
+
+    .navbar-header {
+        padding-left: 15px;
+    }
+
+    .navbar-header img {
+        padding-top: 10px;
+        margin-right: 55px;
+        height: 40px;
+        width: auto;
+    }
+
+    .navbar ul li {
+        font-size: 20px;
+        line-height: 55px;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+
+    .navbar ul li a {
+        color: #074fc9;
+        font-weight: 600;
+    }
+
+    .navbar .user {
+        font-size: 16px;
+        float: right !important;
+    }
+
+    .navbar .user span {
+        margin-bottom: 4px;
+    }
+
+    .navbar .user img {
+        height: 14px;
+        width: auto;
+    }
+
+    .page-middle {
+        margin-top: 110px;
+        background-color: #f8f8f8;
+        border: 1px solid #D0D0D0;
+    }
+
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 60px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #0754da;
+    }
+
+}
+
+
+

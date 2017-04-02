@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.RecruitmentMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.Recruitment" >
+    <id column="recruitmentId" property="recruitmentid" jdbcType="INTEGER" />
+    <result column="resumeNumber" property="resumenumber" jdbcType="CHAR" />
+    <result column="interviewNumber" property="interviewnumber" jdbcType="CHAR" />
+    <result column="admitNumber" property="admitnumber" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    recruitmentId, resumeNumber, interviewNumber, admitNumber
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.RecruitmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from recruitment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from recruitment
+    where recruitmentId = #{recruitmentid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from recruitment
+    where recruitmentId = #{recruitmentid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.RecruitmentExample" >
+    delete from recruitment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.Recruitment" >
+    insert into recruitment (recruitmentId, resumeNumber, interviewNumber, 
+      admitNumber)
+    values (#{recruitmentid,jdbcType=INTEGER}, #{resumenumber,jdbcType=CHAR}, #{interviewnumber,jdbcType=CHAR}, 
+      #{admitnumber,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.Recruitment" >
+    insert into recruitment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="recruitmentid != null" >
+        recruitmentId,
+      </if>
+      <if test="resumenumber != null" >
+        resumeNumber,
+      </if>
+      <if test="interviewnumber != null" >
+        interviewNumber,
+      </if>
+      <if test="admitnumber != null" >
+        admitNumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="recruitmentid != null" >
+        #{recruitmentid,jdbcType=INTEGER},
+      </if>
+      <if test="resumenumber != null" >
+        #{resumenumber,jdbcType=CHAR},
+      </if>
+      <if test="interviewnumber != null" >
+        #{interviewnumber,jdbcType=CHAR},
+      </if>
+      <if test="admitnumber != null" >
+        #{admitnumber,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.RecruitmentExample" resultType="java.lang.Integer" >
+    select count(*) from recruitment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update recruitment
+    <set >
+      <if test="record.recruitmentid != null" >
+        recruitmentId = #{record.recruitmentid,jdbcType=INTEGER},
+      </if>
+      <if test="record.resumenumber != null" >
+        resumeNumber = #{record.resumenumber,jdbcType=CHAR},
+      </if>
+      <if test="record.interviewnumber != null" >
+        interviewNumber = #{record.interviewnumber,jdbcType=CHAR},
+      </if>
+      <if test="record.admitnumber != null" >
+        admitNumber = #{record.admitnumber,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update recruitment
+    set recruitmentId = #{record.recruitmentid,jdbcType=INTEGER},
+      resumeNumber = #{record.resumenumber,jdbcType=CHAR},
+      interviewNumber = #{record.interviewnumber,jdbcType=CHAR},
+      admitNumber = #{record.admitnumber,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="teamB.GraduateJob.po.Recruitment" >
+    update recruitment
+    <set >
+      <if test="resumenumber != null" >
+        resumeNumber = #{resumenumber,jdbcType=CHAR},
+      </if>
+      <if test="interviewnumber != null" >
+        interviewNumber = #{interviewnumber,jdbcType=CHAR},
+      </if>
+      <if test="admitnumber != null" >
+        admitNumber = #{admitnumber,jdbcType=CHAR},
+      </if>
+    </set>
+    where recruitmentId = #{recruitmentid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="teamB.GraduateJob.po.Recruitment" >
+    update recruitment
+    set resumeNumber = #{resumenumber,jdbcType=CHAR},
+      interviewNumber = #{interviewnumber,jdbcType=CHAR},
+      admitNumber = #{admitnumber,jdbcType=CHAR}
+    where recruitmentId = #{recruitmentid,jdbcType=INTEGER}
+  </update>
+</mapper>

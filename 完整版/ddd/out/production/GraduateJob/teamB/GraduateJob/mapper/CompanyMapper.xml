@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.CompanyMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.Company" >
+    <id column="companyId" property="companyid" jdbcType="INTEGER" />
+    <result column="companyName" property="companyname" jdbcType="CHAR" />
+    <result column="companyCharacter" property="companycharacter" jdbcType="CHAR" />
+    <result column="companyPlace" property="companyplace" jdbcType="CHAR" />
+    <result column="industry" property="industry" jdbcType="CHAR" />
+    <result column="companyPassword" property="companypassword" jdbcType="CHAR" />
+    <result column="main" property="main" jdbcType="VARCHAR" />
+    <result column="website" property="website" jdbcType="VARCHAR" />
+    <result column="logo" property="logo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    companyId, companyName, companyCharacter, companyPlace, industry, companyPassword, 
+    main, website, logo
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.CompanyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where companyId = #{companyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from company
+    where companyId = #{companyid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.CompanyExample" >
+    delete from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.Company" >
+    insert into company (companyId, companyName, companyCharacter, 
+      companyPlace, industry, companyPassword, 
+      main, website, logo
+      )
+    values (#{companyid,jdbcType=INTEGER}, #{companyname,jdbcType=CHAR}, #{companycharacter,jdbcType=CHAR}, 
+      #{companyplace,jdbcType=CHAR}, #{industry,jdbcType=CHAR}, #{companypassword,jdbcType=CHAR}, 
+      #{main,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.Company" >
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="companyid != null" >
+        companyId,
+      </if>
+      <if test="companyname != null" >
+        companyName,
+      </if>
+      <if test="companycharacter != null" >
+        companyCharacter,
+      </if>
+      <if test="companyplace != null" >
+        companyPlace,
+      </if>
+      <if test="industry != null" >
+        industry,
+      </if>
+      <if test="companypassword != null" >
+        companyPassword,
+      </if>
+      <if test="main != null" >
+        main,
+      </if>
+      <if test="website != null" >
+        website,
+      </if>
+      <if test="logo != null" >
+        logo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="companyid != null" >
+        #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="companyname != null" >
+        #{companyname,jdbcType=CHAR},
+      </if>
+      <if test="companycharacter != null" >
+        #{companycharacter,jdbcType=CHAR},
+      </if>
+      <if test="companyplace != null" >
+        #{companyplace,jdbcType=CHAR},
+      </if>
+      <if test="industry != null" >
+        #{industry,jdbcType=CHAR},
+      </if>
+      <if test="companypassword != null" >
+        #{companypassword,jdbcType=CHAR},
+      </if>
+      <if test="main != null" >
+        #{main,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        #{logo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.CompanyExample" resultType="java.lang.Integer" >
+    select count(*) from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update company
+    <set >
+      <if test="record.companyid != null" >
+        companyId = #{record.companyid,jdbcType=INTEGER},
+      </if>
+      <if test="record.companyname != null" >
+        companyName = #{record.companyname,jdbcType=CHAR},
+      </if>
+      <if test="record.companycharacter != null" >
+        companyCharacter = #{record.companycharacter,jdbcType=CHAR},
+      </if>
+      <if test="record.companyplace != null" >
+        companyPlace = #{record.companyplace,jdbcType=CHAR},
+      </if>
+      <if test="record.industry != null" >
+        industry = #{record.industry,jdbcType=CHAR},
+      </if>
+      <if test="record.companypassword != null" >
+        companyPassword = #{record.companypassword,jdbcType=CHAR},
+      </if>
+      <if test="record.main != null" >
+        main = #{record.main,jdbcType=VARCHAR},
+      </if>
+      <if test="record.website != null" >
+        website = #{record.website,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logo != null" >
+        logo = #{record.logo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update company
+    set companyId = #{record.companyid,jdbcType=INTEGER},
+      companyName = #{record.companyname,jdbcType=CHAR},
+      companyCharacter = #{record.companycharacter,jdbcType=CHAR},
+      companyPlace = #{record.companyplace,jdbcType=CHAR},
+      industry = #{record.industry,jdbcType=CHAR},
+      companyPassword = #{record.companypassword,jdbcType=CHAR},
+      main = #{record.main,jdbcType=VARCHAR},
+      website = #{record.website,jdbcType=VARCHAR},
+      logo = #{record.logo,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="teamB.GraduateJob.po.Company" >
+    update company
+    <set >
+      <if test="companyname != null" >
+        companyName = #{companyname,jdbcType=CHAR},
+      </if>
+      <if test="companycharacter != null" >
+        companyCharacter = #{companycharacter,jdbcType=CHAR},
+      </if>
+      <if test="companyplace != null" >
+        companyPlace = #{companyplace,jdbcType=CHAR},
+      </if>
+      <if test="industry != null" >
+        industry = #{industry,jdbcType=CHAR},
+      </if>
+      <if test="companypassword != null" >
+        companyPassword = #{companypassword,jdbcType=CHAR},
+      </if>
+      <if test="main != null" >
+        main = #{main,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null" >
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where companyId = #{companyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="teamB.GraduateJob.po.Company" >
+    update company
+    set companyName = #{companyname,jdbcType=CHAR},
+      companyCharacter = #{companycharacter,jdbcType=CHAR},
+      companyPlace = #{companyplace,jdbcType=CHAR},
+      industry = #{industry,jdbcType=CHAR},
+      companyPassword = #{companypassword,jdbcType=CHAR},
+      main = #{main,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR}
+    where companyId = #{companyid,jdbcType=INTEGER}
+  </update>
+</mapper>

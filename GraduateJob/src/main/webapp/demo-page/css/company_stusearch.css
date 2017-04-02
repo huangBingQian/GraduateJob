@@ -1,0 +1,88 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+
+.content{
+	height: 1000px;
+	font-size: 20px;
+
+}
+.selrev {
+	padding: 50px 50px 10px 50px;
+
+}
+.selrev label{
+	width: 85px;
+	margin-right: 10px;
+}
+.select label,p{
+	display: inline-block;
+	flex-direction:row;
+	padding-left: 20px;
+
+}
+.selrev .active{
+	border-radius: 5px;
+	background-color: #3377b2;
+	color: #ffffff;
+}
+.selrev a{
+	font-size: 18px;
+	padding: 2px 7px;
+	cursor: pointer;
+	margin-right: 15px;
+	display: inline-block;
+
+}
+.selrev a:hover{
+
+	border-radius: 5px;
+	background-color: #3883c4;
+	color: #ffffff;
+}
+
+.selected {
+	display: inline-block;
+	flex-direction:row;
+	position: relative;
+}
+.selceted > label{
+	margin-top: 0px;
+	position: absolute;
+}
+.selceted > div > a{
+	margin-bottom: 8px;
+}
+.selceted > div{
+	display: inline-block;
+	width: 700px;
+	margin-left: 105px;
+}
+
+.hr1 {
+	margin-top:10px;
+	width: 90%;
+    height: 0.5px;
+    color: black;
+    background: black;
+}
+
+.stumessage{
+	width: 90%;
+}
+
+
+.stumessage td{
+	width: 12%;
+	height: 23px;
+	text-align: center;
+}
+
+.selresult{
+	padding-left: 40px;
+}
+
+.studentmsg label,p{
+
+}
+
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.top{
+	color:rgba(101,101,101,1.00);
+	background-color:rgba(234,234,234,1.00);
+	border-top:0;
+	padding:10px;
+}
+h3{
+	margin-top:20px;
+	margin-left:10px;
+	color:rgba(101,101,101,1.00);
+}
+hr{
+	border:none;
+	background-color:rgba(200,200,200,1.00);
+	height:1px;
+}
+.head{}
+.time{
+	display:inline-block;
+	margin-right:20px;
+}
+.breadcrumb{
+	background-color:white;
+}
+table{
+	width:100%;
+}
+tr{
+	height:50px;
+	border-top:1px solid rgba(200,200,200,1.00);
+	border-bottom:1px solid rgba(200,200,200,1.00);
+}
+td{
+	text-align:center;
+}
+.pagination{
+	margin-left:333px;
+}

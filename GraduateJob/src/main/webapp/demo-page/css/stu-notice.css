@@ -1,0 +1,36 @@
+.main_right{
+	width:99.9%;
+	height:100%;
+	padding-top:10px;
+}
+table{
+	border-bottom:solid 1px black;
+	padding-left:10px;
+	padding-right:10px;
+	width:100%;
+	margin-right:10px;
+}
+tr,td{
+	border-bottom:solid 1px rgba(122,122,122,1.00);
+	margin-right:10px;
+	height:90px;
+}
+.state{
+	width:10px;
+	padding-left:30px;
+	padding-right:0;
+}
+.teacher{
+	width:50px;
+	padding-left:5px;
+}
+.details{
+	width:200px;
+	overflow:hidden;
+}
+.time{
+	width:100px;
+}
+.paging{
+	margin-left:321px;
+}

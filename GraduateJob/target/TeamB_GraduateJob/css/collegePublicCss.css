@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+    body{
+        background: #f2f2f2;
+    }
+    .container{
+        width: 1200px;
+    }
+    /*导航栏*/
+    .navbar {
+        border-top: 4px solid #0754da;
+        height: 60px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #D0D0D0;
+    }
+    .navbar-header > img {
+        height: 35px;
+        width: auto;
+        margin-right: 25px;
+    }
+    .navbar-header {
+        padding-top: 10px;
+    }
+    .navbar .navbar-collapse > ul > li {
+        font-size: 20px;
+        line-height: 50px;
+        float: left;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+    .navbar .navbar-collapse > ul > li > a {
+        padding-top: 18px;
+        color: #959595;
+    }
+
+    .navbar .navbar-collapse > ul > li > a:hover {
+        font-weight: 600;
+        color: #0841a8;
+    }
+
+    .navbar .quit {
+        float: right!important;
+        font-size: 18px;
+        line-height: 50px;
+        font-weight: 500;
+
+        margin-right: -15px;
+    }
+    .page-middle{
+        margin-top: 50px;
+    }
+    .page-middle .left{
+        float: left;
+        width: 290px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+        margin-top: 60px;
+    }
+    .page-middle .left img{
+        width: 200px;
+        height: auto;
+        margin: 40px auto 20px auto;
+        display: block;
+    }
+    .page-middle .left span,a{
+        text-align: center;
+    }
+    .page-middle .left .company-name{
+        color: #284597;
+        font-size: 20px;
+        font-weight: 600;
+        display: block;
+    }
+    .page-middle .left .company-website{
+        font-size: 18px;
+        margin-bottom: 40px;
+        margin-top: 10px;
+        display: block;
+    }
+    .page-middle .left .left-menu li{
+        border-bottom: 1px solid #adadad;
+        height: 70px;
+        width: 100%;
+        line-height: 70px;
+        color: #6a6a6a;
+
+    }
+    .page-middle .left .left-menu li:nth-child(1){
+        border-top: 1px solid #adadad;
+
+    }
+
+    .page-middle .left .left-menu li a{
+        font-size: 22px;
+        text-align: center;
+        display: block;
+    }
+    .page-middle .left .left-menu .active{
+        background-color: #345ac4;
+        color: #ffffff;
+    }
+
+    .page-middle .content{
+        float: right;
+        margin-top: 60px;
+        width: 910px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+    }
+
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 220px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #284597;
+    }
+}

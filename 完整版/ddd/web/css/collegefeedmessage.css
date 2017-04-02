@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+
+
+
+.content{
+    height: 900px;
+}
+.address{
+    width: 100%;
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.addd{
+    padding-top: 10px;
+    padding-left: 10px
+}
+
+.condition{
+    margin-top: 40px;
+    width: 95%;
+    height: 50px;
+    background-color: #f2f2f2;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tittt{
+    padding-top: 10px;
+    margin-top: auto;
+}
+
+
+.first {
+    height: 50px;
+    background-color: #f2f2f2;
+}
+
+.message{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.permsg{
+    float: right;
+    margin-right: 300px;
+    margin-top: 20px;
+}
+.msg{
+    float:right;
+    margin-right: 50px;
+}
+
+.permsg td{
+    width: 100px;
+}
+
+.permsg tr {
+    height: 80px;
+}
+
+
+.permsg .td1{
+    text-align: right;
+}
+.permsg .td2{
+    padding-left: 10px;
+}
+
+
+.backmsg {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+
+}

@@ -1,0 +1,359 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+    body{
+        background: #f2f2f2;
+    }
+    .container{
+        width: 1200px;
+
+    }
+    /*导航栏*/
+    .navbar {
+        border-top: 4px solid #0754da;
+        height: 60px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #D0D0D0;
+    }
+    .navbar-header > img {
+        margin-left: 0%;
+        height: 35px;
+        width: auto;
+
+    }
+    .navbar-header {
+        padding-top: 10px;
+    }
+    .navbar .navbar-collapse > ul > li {
+        font-size: 20px;
+        line-height: 50px;
+        float: left;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+    .navbar .navbar-collapse > ul > li > a {
+        padding-top: 18px;
+        color: #959595;
+    }
+
+    .navbar .navbar-collapse > ul > li > a:hover {
+        font-weight: 600;
+        color: #0841a8;
+    }
+
+    .navbar .user {
+        float: right!important;
+        margin-right: -15px;
+        position: relative;
+    }
+    .navbar .user > .user-logo{
+        margin-top: 5px;
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        border: 2px solid #adadad;
+        border-radius: 22px;
+        background-size: 45px;
+    }
+    .navbar .user > li > .name{
+        vertical-align: middle;
+        margin-left: -20px;
+        font-size: 17px;
+        color: #7b7b7b;
+    }
+    .navbar .user > li > span > img{
+        height: 16px;
+        width: auto;
+    }
+    .navbar .user > li > span > .msg-number{
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    .navbar .user > .user-info{
+        position: absolute;
+        top: 45px;
+        left: 25px;
+    }
+    .navbar .user > .user-info > ul > li{
+
+    }
+    .navbar .user:hover > .user-info{
+        display: block;
+    }
+    .navbar .user:hover > .user-logo{
+        border-color: #0754da;
+    }
+
+    .navbar .user > .user-info .title{
+        background-color: #ebebeb;
+    }
+    .navbar .user > .user-info .title > .user-logo{
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        background-color: #4cae4c;
+        display: block;
+    }
+    .navbar .user > .user-info .title > .user-info{
+        float: right;
+    }
+    .page-middle{
+        margin-top: 50px;
+    }
+    .page-middle .left{
+        float: left;
+        width: 290px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+        margin-top: 60px;
+    }
+    .page-middle .left img{
+        width: 200px;
+        height: auto;
+        margin: 40px auto 20px auto;
+        display: block;
+    }
+    .page-middle .left span,a{
+        text-align: center;
+    }
+    .page-middle .left .company-name{
+        color: #284597;
+        font-size: 20px;
+        font-weight: 600;
+        display: block;
+    }
+    .page-middle .left .company-website{
+        font-size: 18px;
+        margin-bottom: 40px;
+        margin-top: 10px;
+        display: block;
+    }
+    .page-middle .left .left-menu li{
+        border-bottom: 1px solid #adadad;
+        height: 70px;
+        width: 100%;
+        line-height: 70px;
+        color: #6a6a6a;
+
+    }
+    .page-middle .left .left-menu li:nth-child(1){
+        border-top: 1px solid #adadad;
+
+    }
+    .page-middle .left .left-menu li:nth-child(2) a{
+        color: #284597;
+        font-weight: 600;
+    }
+
+    .page-middle .left .left-menu li a{
+        font-size: 24px;
+        text-align: center;
+        display: block;
+    }
+    .page-middle .content{
+        float: right;
+        margin-top: 60px;
+        margin-left: -100px; 
+        width: 910px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+        padding: 60px 60px;
+    }
+
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 220px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #284597;
+    }
+    .third{
+    width:100%;
+    height:10000px;
+    padding:0;
+    background:url(../image/bg.png) no-repeat;
+    background-attachment:fixed;
+    background-color:#14142C;
+    }
+    
+.third_main{
+    width:70%;
+    height:100%;
+    background-color:#FFF;
+    position:relative;
+    top:180px;
+    left:230px;
+}
+.main_left{
+    width:30%;
+    background-color:#F0F0EE;
+    display:inline-block;
+}
+.main_left img{
+    margin:25px 0 0 0px;
+}
+.main_left p{
+    text-align: center;
+    margin-top:10px;
+    font-size:16px;
+    font-weight:bold;
+    color:#4F9FDE;
+}
+.main_left span{
+    margin-top:5px;
+    font-weight:normal;
+}
+.main_left a:visited,.main_left a:link{
+    color:#000;
+}
+.main_left ul{
+    margin-top:20px;
+}
+.left_bottom li{
+    list-style-type:none;
+    height:70px;
+    line-height:70px;
+    text-align:center;
+    background-color:#FFF;
+    border:1px solid #999;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size:20px;
+    font-family:"Î¢ÈíÑÅºÚ";
+    color:#333333;
+}
+.left_bottom a{
+    text-decoration:none;
+}
+.left_bottom a:hover,.left_bottom a:active{
+    color:#5e5e5e;
+}
+.main_right{
+    display:inline-block;
+    width:70%;
+    height:100%;
+    float:right;
+}
+.resume,.interview,.offer,.offer_mm,.jinzhan,.interest{
+    padding:20px;
+}
+table{
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+}
+
+.resume table{
+    width:80%;
+}
+.offer td {
+        border:1px solid black;
+        border-bottom: none;
+        border-right: none;
+        text-align: center;
+        height: 40px;
+        width: 14%;
+}
+.offer_mm td{
+    width: 33%;
+    border-bottom: 1px solid black;
+}
+.offer_mm table{
+    width:100%;
+}
+.offer_mm tbody:before {
+    content: '';
+    display: block;
+    border-bottom: 1px solid black;
+    width: 300%;
+}
+
+.offer table {
+    padding:0px !important;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    transform: translateY(20px);
+}
+
+.huawei tr{
+    height: 110px;
+
+}
+.huawei td {
+    border-bottom: 1px solid black;
+}
+
+a:link {color: blue}     /* 未访问的链接 */
+a:visited {color: blue}  /* 已访问的链接 */
+a:hover {color: blue}    /* 鼠标移动到链接上 */
+a:active {color: black}   /* 选定的链接 */
+a{ text-decoration:none;}
+a:hover{ text-decoration:underline;}
+
+body {
+        margin: 0;
+        padding: 0;
+        font-family: 微软雅黑;
+    }
+.main_right{
+    display: flex;
+    flex-direction:column; 
+}
+.msg{
+    display: flex;
+    flex-direction:row;
+    margin: 10px 0px; 
+}
+.ps_message{
+    display: flex;
+    flex-direction:column; 
+    margin-left: 20px;
+}
+.msg{
+    width: 100%;
+}
+.msg label{
+    width:15%;
+    min-width: 90px;
+    text-align: right;
+}
+.msg .msg_msg{
+    width: 75%;
+    text-align: left;
+}
+.msg input {
+    width:75%;
+    height: 60px;
+    border: 1px solid black;
+}
+
+.msg textarea{
+    width:75%;
+    height: 90px;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 20px;
+}
+.upload1{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+}
+.upload2{
+    width: 15%;
+    min-width: 80px;
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    border: 1px;
+}
+.download a {
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+}
+
+}

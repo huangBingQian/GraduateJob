@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.HandInResumeMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.HandInResume" >
+    <result column="graduateId" property="graduateid" jdbcType="INTEGER" />
+    <result column="jobId" property="jobid" jdbcType="INTEGER" />
+    <result column="Resume_state" property="resumeState" jdbcType="INTEGER" />
+    <result column="Is_view" property="isView" jdbcType="INTEGER" />
+    <result column="Interviewdate" property="interviewdate" jdbcType="DATE" />
+    <result column="Senddate" property="senddate" jdbcType="DATE" />
+    <result column="companyid" property="companyid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    graduateId, jobId, Resume_state, Is_view, Interviewdate, Senddate, companyid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.HandInResumeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hand_in_resume
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.HandInResumeExample" >
+    delete from hand_in_resume
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.HandInResume" >
+    insert into hand_in_resume (graduateId, jobId, Resume_state, 
+      Is_view, Interviewdate, Senddate, 
+      companyid)
+    values (#{graduateid,jdbcType=INTEGER}, #{jobid,jdbcType=INTEGER}, #{resumeState,jdbcType=INTEGER}, 
+      #{isView,jdbcType=INTEGER}, #{interviewdate,jdbcType=DATE}, #{senddate,jdbcType=DATE}, 
+      #{companyid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.HandInResume" >
+    insert into hand_in_resume
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="graduateid != null" >
+        graduateId,
+      </if>
+      <if test="jobid != null" >
+        jobId,
+      </if>
+      <if test="resumeState != null" >
+        Resume_state,
+      </if>
+      <if test="isView != null" >
+        Is_view,
+      </if>
+      <if test="interviewdate != null" >
+        Interviewdate,
+      </if>
+      <if test="senddate != null" >
+        Senddate,
+      </if>
+      <if test="companyid != null" >
+        companyid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="graduateid != null" >
+        #{graduateid,jdbcType=INTEGER},
+      </if>
+      <if test="jobid != null" >
+        #{jobid,jdbcType=INTEGER},
+      </if>
+      <if test="resumeState != null" >
+        #{resumeState,jdbcType=INTEGER},
+      </if>
+      <if test="isView != null" >
+        #{isView,jdbcType=INTEGER},
+      </if>
+      <if test="interviewdate != null" >
+        #{interviewdate,jdbcType=DATE},
+      </if>
+      <if test="senddate != null" >
+        #{senddate,jdbcType=DATE},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.HandInResumeExample" resultType="java.lang.Integer" >
+    select count(*) from hand_in_resume
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update hand_in_resume
+    <set >
+      <if test="record.graduateid != null" >
+        graduateId = #{record.graduateid,jdbcType=INTEGER},
+      </if>
+      <if test="record.jobid != null" >
+        jobId = #{record.jobid,jdbcType=INTEGER},
+      </if>
+      <if test="record.resumeState != null" >
+        Resume_state = #{record.resumeState,jdbcType=INTEGER},
+      </if>
+      <if test="record.isView != null" >
+        Is_view = #{record.isView,jdbcType=INTEGER},
+      </if>
+      <if test="record.interviewdate != null" >
+        Interviewdate = #{record.interviewdate,jdbcType=DATE},
+      </if>
+      <if test="record.senddate != null" >
+        Senddate = #{record.senddate,jdbcType=DATE},
+      </if>
+      <if test="record.companyid != null" >
+        companyid = #{record.companyid,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update hand_in_resume
+    set graduateId = #{record.graduateid,jdbcType=INTEGER},
+      jobId = #{record.jobid,jdbcType=INTEGER},
+      Resume_state = #{record.resumeState,jdbcType=INTEGER},
+      Is_view = #{record.isView,jdbcType=INTEGER},
+      Interviewdate = #{record.interviewdate,jdbcType=DATE},
+      Senddate = #{record.senddate,jdbcType=DATE},
+      companyid = #{record.companyid,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

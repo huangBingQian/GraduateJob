@@ -1,0 +1,159 @@
+@charset "utf-8";
+.head{
+	width:100%;
+}
+.navbar {
+    display:table;
+	width:100%;
+    margin:0 auto;
+	margin-top:20px;
+}
+.navbar li {
+    display:table-cell;
+}
+.navbar li + li {
+    padding-left:20px;
+}
+.navbar-nav{
+	margin-left:430px;
+}
+.third{
+    width:100%;
+    height:100%;
+    padding:0;
+}
+.third_main{
+    width:70%;
+	height:auto !important;
+    background-color:#FFF;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	margin-bottom:0;
+	padding-bottom:50px;
+	padding-right:30px;
+	border:1px #508AF0 solid;
+	border-radius:10px;
+	overflow:auto;
+}
+.main_left{
+    width:22%;
+    background-color:#F0F0EE;
+	display:inline-block;
+	padding:0px;
+	border-radius:10px 0 10px 10px;
+}
+.main_left img{
+    margin:25px 0 0 0px;
+}
+.main_left p{
+    text-align: center;
+    margin-top:10px;
+    font-size:16px;
+    font-weight:bold;
+    color:#4F9FDE;
+}
+.left_bottom ul{
+	margin:0px;
+	width:100%;
+    margin-top:20px;
+	padding:0px;
+}
+.left_bottom li{
+    list-style-type:none;
+    height:70px;
+    line-height:70px;
+    text-align:center;
+    background-color:#FFF;
+    border:1px solid #999;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:10px;
+    font-size:20px;
+    font-family:"����";
+    color:#333333;
+}
+.left_bottom a{
+    text-decoration:none;
+}
+.left_bottom a:visited,.left_bottom a:link{
+    color:#000;
+}
+.left_bottom a:hover,.left_bottom a:active{
+    color:#5e5e5e;
+}
+.main_right{
+	display:inline-block;
+	width:74%;
+	float:right;
+	padding-top:20px;
+	height:100%
+}
+.right_head{
+	width:100%;
+	padding-top:5px;
+	padding-left:10px;
+	padding-bottom:1px;
+	margin-bottom:20px;
+	background:rgba(240,240,238,1.00);
+}
+.basic,.contact,.edu_background,.languagable,.certificate,.skill,.practice,.project,.job_hunting_exp,.job_purpose,.other{
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.basic table{
+	clear:both;
+	margin-left:48px;
+}
+.basic td{
+	height:35px;
+	padding-left:20px;
+	width:130px;
+}
+.basic td p{
+	display:inline-block;
+	margin-left:20px;
+}
+.basic th{
+	height:150px;
+	width:120px;
+}
+.contact table{
+	clear:both;
+	margin-left:210px;
+}
+.contact td{
+	padding-left:28px;
+	padding-right:28px;
+}
+.edu_background table,.job_hunting_exp table,.job_purpose table{
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+}
+.edu_background td,.job_hunting_exp td,.job_purpose td{
+	width:150px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.languagable table,.honor table,.practice table,.project table{
+	clear:both;
+	margin-left:40px;
+}
+.languagable td,.honor td,.practice td,.project td{
+	width:150px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.certificate table,.skill table{
+	margin-left:40px;
+}
+.certificate td,.skill td{
+	width:150px;
+}
+.page-end{
+	background:rgba(17,108,191,1.00);
+	margin-top:10px;
+	height:75px;
+	padding-top:30px;
+}

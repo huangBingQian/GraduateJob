@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="TeamB.GraduateJob.dao.mapper.dai_ban_shi_xiangMapper" >
+  <resultMap id="BaseResultMap" type="TeamB.GraduateJob.po.dai_ban_shi_xiang" >
+    <id column="daiBanShiXiangId" property="daibanshixiangid" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="event" property="event" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="DATE" />
+    <result column="place" property="place" jdbcType="VARCHAR" />
+    <result column="leiBie" property="leibie" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    daiBanShiXiangId, userId, event, date, place, leiBie
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiangExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from dai_ban_shi_xiang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from dai_ban_shi_xiang
+    where daiBanShiXiangId = #{daibanshixiangid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from dai_ban_shi_xiang
+    where daiBanShiXiangId = #{daibanshixiangid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiangExample" >
+    delete from dai_ban_shi_xiang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiang" >
+    insert into dai_ban_shi_xiang (daiBanShiXiangId, userId, event, 
+      date, place, leiBie)
+    values (#{daibanshixiangid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{event,jdbcType=VARCHAR}, 
+      #{date,jdbcType=DATE}, #{place,jdbcType=VARCHAR}, #{leibie,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiang" >
+    insert into dai_ban_shi_xiang
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="daibanshixiangid != null" >
+        daiBanShiXiangId,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+      <if test="event != null" >
+        event,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="place != null" >
+        place,
+      </if>
+      <if test="leibie != null" >
+        leiBie,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="daibanshixiangid != null" >
+        #{daibanshixiangid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="event != null" >
+        #{event,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=DATE},
+      </if>
+      <if test="place != null" >
+        #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="leibie != null" >
+        #{leibie,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiangExample" resultType="java.lang.Integer" >
+    select count(*) from dai_ban_shi_xiang
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update dai_ban_shi_xiang
+    <set >
+      <if test="record.daibanshixiangid != null" >
+        daiBanShiXiangId = #{record.daibanshixiangid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.event != null" >
+        event = #{record.event,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=DATE},
+      </if>
+      <if test="record.place != null" >
+        place = #{record.place,jdbcType=VARCHAR},
+      </if>
+      <if test="record.leibie != null" >
+        leiBie = #{record.leibie,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update dai_ban_shi_xiang
+    set daiBanShiXiangId = #{record.daibanshixiangid,jdbcType=INTEGER},
+      userId = #{record.userid,jdbcType=INTEGER},
+      event = #{record.event,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=DATE},
+      place = #{record.place,jdbcType=VARCHAR},
+      leiBie = #{record.leibie,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiang" >
+    update dai_ban_shi_xiang
+    <set >
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="event != null" >
+        event = #{event,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=DATE},
+      </if>
+      <if test="place != null" >
+        place = #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="leibie != null" >
+        leiBie = #{leibie,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where daiBanShiXiangId = #{daibanshixiangid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="TeamB.GraduateJob.po.dai_ban_shi_xiang" >
+    update dai_ban_shi_xiang
+    set userId = #{userid,jdbcType=INTEGER},
+      event = #{event,jdbcType=VARCHAR},
+      date = #{date,jdbcType=DATE},
+      place = #{place,jdbcType=VARCHAR},
+      leiBie = #{leibie,jdbcType=VARCHAR}
+    where daiBanShiXiangId = #{daibanshixiangid,jdbcType=INTEGER}
+  </update>
+</mapper>

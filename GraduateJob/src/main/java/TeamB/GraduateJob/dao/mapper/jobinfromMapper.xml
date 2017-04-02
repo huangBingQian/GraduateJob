@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="TeamB.GraduateJob.dao.mapper.jobinfromMapper" >
+  <resultMap id="BaseResultMap" type="TeamB.GraduateJob.po.jobinfrom" >
+    <id column="jobId" property="jobid" jdbcType="VARCHAR" />
+    <result column="jobNub" property="jobnub" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="TeamB.GraduateJob.po.jobinfromWithBLOBs" extends="BaseResultMap" >
+    <result column="demand" property="demand" jdbcType="LONGVARCHAR" />
+    <result column="functions" property="functions" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    jobId, jobNub
+  </sql>
+  <sql id="Blob_Column_List" >
+    demand, functions
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="TeamB.GraduateJob.po.jobinfromExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jobinfrom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="TeamB.GraduateJob.po.jobinfromExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jobinfrom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from jobinfrom
+    where jobId = #{jobid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from jobinfrom
+    where jobId = #{jobid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="TeamB.GraduateJob.po.jobinfromExample" >
+    delete from jobinfrom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="TeamB.GraduateJob.po.jobinfromWithBLOBs" >
+    insert into jobinfrom (jobId, jobNub, demand, 
+      functions)
+    values (#{jobid,jdbcType=VARCHAR}, #{jobnub,jdbcType=INTEGER}, #{demand,jdbcType=LONGVARCHAR}, 
+      #{functions,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="TeamB.GraduateJob.po.jobinfromWithBLOBs" >
+    insert into jobinfrom
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jobid != null" >
+        jobId,
+      </if>
+      <if test="jobnub != null" >
+        jobNub,
+      </if>
+      <if test="demand != null" >
+        demand,
+      </if>
+      <if test="functions != null" >
+        functions,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jobid != null" >
+        #{jobid,jdbcType=VARCHAR},
+      </if>
+      <if test="jobnub != null" >
+        #{jobnub,jdbcType=INTEGER},
+      </if>
+      <if test="demand != null" >
+        #{demand,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="functions != null" >
+        #{functions,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="TeamB.GraduateJob.po.jobinfromExample" resultType="java.lang.Integer" >
+    select count(*) from jobinfrom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jobinfrom
+    <set >
+      <if test="record.jobid != null" >
+        jobId = #{record.jobid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jobnub != null" >
+        jobNub = #{record.jobnub,jdbcType=INTEGER},
+      </if>
+      <if test="record.demand != null" >
+        demand = #{record.demand,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.functions != null" >
+        functions = #{record.functions,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update jobinfrom
+    set jobId = #{record.jobid,jdbcType=VARCHAR},
+      jobNub = #{record.jobnub,jdbcType=INTEGER},
+      demand = #{record.demand,jdbcType=LONGVARCHAR},
+      functions = #{record.functions,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jobinfrom
+    set jobId = #{record.jobid,jdbcType=VARCHAR},
+      jobNub = #{record.jobnub,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="TeamB.GraduateJob.po.jobinfromWithBLOBs" >
+    update jobinfrom
+    <set >
+      <if test="jobnub != null" >
+        jobNub = #{jobnub,jdbcType=INTEGER},
+      </if>
+      <if test="demand != null" >
+        demand = #{demand,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="functions != null" >
+        functions = #{functions,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where jobId = #{jobid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="TeamB.GraduateJob.po.jobinfromWithBLOBs" >
+    update jobinfrom
+    set jobNub = #{jobnub,jdbcType=INTEGER},
+      demand = #{demand,jdbcType=LONGVARCHAR},
+      functions = #{functions,jdbcType=LONGVARCHAR}
+    where jobId = #{jobid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="TeamB.GraduateJob.po.jobinfrom" >
+    update jobinfrom
+    set jobNub = #{jobnub,jdbcType=INTEGER}
+    where jobId = #{jobid,jdbcType=VARCHAR}
+  </update>
+</mapper>

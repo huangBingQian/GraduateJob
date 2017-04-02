@@ -1,0 +1,276 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+    body{
+        background: #f2f2f2;
+    }
+    .container{
+        width: 1200px;
+    }
+    /*导航栏*/
+    .navbar {
+        border-top: 4px solid #0754da;
+        height: 60px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #D0D0D0;
+    }
+    .navbar-header > img {
+        margin-left: -330px;
+        height: 35px;
+        width: auto;
+
+    }
+    .navbar-header {
+        padding-top: 10px;
+    }
+    .navbar .navbar-collapse > ul > li {
+        font-size: 20px;
+        line-height: 50px;
+        float: left;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+    .navbar .navbar-collapse > ul > li > a {
+        padding-top: 18px;
+        color: #959595;
+    }
+
+    .navbar .navbar-collapse > ul > li > a:hover {
+        font-weight: 600;
+        color: #0841a8;
+    }
+
+    .navbar .user {
+        float: right!important;
+        margin-right: -15px;
+        position: relative;
+    }
+    .navbar .user > .user-logo{
+        margin-top: 5px;
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        border: 2px solid #adadad;
+        border-radius: 22px;
+        background-size: 45px;
+    }
+    .navbar .user > li > .name{
+        vertical-align: middle;
+        margin-left: -20px;
+        font-size: 17px;
+        color: #7b7b7b;
+    }
+    .navbar .user > li > span > img{
+        height: 16px;
+        width: auto;
+    }
+    .navbar .user > li > span > .msg-number{
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    .navbar .user > .user-info{
+        position: absolute;
+        top: 45px;
+        left: 25px;
+    }
+    .navbar .user > .user-info > ul > li{
+           
+    }
+    .navbar .user:hover > .user-info{
+        display: block;
+    }
+    .navbar .user:hover > .user-logo{
+        border-color: #0754da;
+    }
+
+    .navbar .user > .user-info .title{
+        background-color: #ebebeb;
+    }
+    .navbar .user > .user-info .title > .user-logo{
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        background-color: #4cae4c;
+        display: block;
+    }
+    .navbar .user > .user-info .title > .user-info{
+        float: right;
+    }
+
+    /*页面中部*/
+    .page-middle{
+        margin-top: 90px;
+    }
+    .page-middle .choices{
+        width: 1200px;
+        display: block;
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+    }
+    .page-middle .choices > div{
+        line-height: 50px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dcdcdc;
+    }
+    .page-middle .choices > div > span{
+        height: 50px;
+        font-size: 20px;
+        padding: 5px 20px;
+        font-weight: 500;
+        vertical-align: middle;
+        float: left;
+    }
+    .page-middle .choices > div > div{
+        margin-left: 80px;
+    }
+
+    .page-middle .choices > div li{
+        float: left;
+        height: 50px;
+        padding: 5px 20px;
+    }
+    .page-middle .choices > div li a{
+        font-size: 20px;
+        font-weight: 400;
+        padding: 4px 7px;
+        vertical-align: middle;
+    }
+    .page-middle .choices > div li a:hover, .active{
+        background-color: #428bca;
+        border-radius: 5px;
+        color: #fbf9ff;
+    }
+    .page-middle .job-list{
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        margin-top: 25px;
+        font-size: 17px;
+    }
+    .page-middle .job-list .hd{
+        height: 45px;
+        line-height: 45px;
+        border-bottom: 1px solid #cacaca;
+    }
+    .page-middle .job-list input{
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 5px;
+    }
+    .page-middle .job-list .hd span{
+        margin-right: 25px;
+    }
+    .page-middle .job-list .hd button{
+        font-size: 16px;
+        padding: 4px 7px;
+    }
+    .page-middle .job-list .job-name{
+        display: inline-block;
+        width: 450px;
+    }
+    .page-middle .job-list .company-name{
+        display: inline-block;
+        width: 300px;
+    }
+    .page-middle .job-list .workplace{
+        display: inline-block;
+        width: 230px;
+        text-align: center;
+    }
+    .page-middle .job-list .pay{
+        display: inline-block;
+        width: 150px;
+        text-align: center;
+    }
+    .page-middle .job-list .atrribute *{
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+    }
+    .page-middle .job-list .atrribute{
+        border-bottom: 1px solid #cacaca;
+    }
+
+    .page-middle .job-list li{
+        height: 45px;
+        line-height: 45px;
+        border-bottom: 1px solid #ebebeb;
+    }
+    .page-middle .job-list li a:hover{
+        color: #3071a9;
+    }
+
+    .page-middle .fenye{
+        text-align: center;
+    }
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 220px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #284597;
+    }
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 50px;
+        border-bottom: 1px solid #D0D0D0;
+    }
+
+    .navbar-header {
+        padding-left: 15px;
+    }
+
+    .navbar-header img {
+        padding-top: 10px;
+        margin-right: 55px;
+        height: 40px;
+        width: auto;
+    }
+
+    .navbar ul li {
+        font-size: 20px;
+        line-height: 55px;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+
+    .navbar ul li a {
+        color: #959595;
+    }
+
+    .navbar ul li a:hover {
+        color: #074fc9;
+        font-weight: 600;
+    }
+
+    .navbar .user {
+        font-size: 16px;
+        float: right!important;
+    }
+    .navbar .user span {
+        margin-bottom: 4px;
+    }
+    .navbar .user img{
+        height: 14px;
+        width: auto;
+    }
+    .page-middle{
+        margin-top: 110px;
+        background-color: #f8f8f8;
+        border: 1px solid #D0D0D0;
+    }
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 60px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #0754da;
+    }
+
+}
+
+

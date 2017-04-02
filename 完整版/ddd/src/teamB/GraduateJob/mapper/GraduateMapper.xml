@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="teamB.GraduateJob.mapper.GraduateMapper" >
+  <resultMap id="BaseResultMap" type="teamB.GraduateJob.po.Graduate" >
+    <id column="graduateId" property="graduateid" jdbcType="INTEGER" />
+    <result column="graduateName" property="graduatename" jdbcType="CHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="major" property="major" jdbcType="CHAR" />
+    <result column="graduatePhone" property="graduatephone" jdbcType="CHAR" />
+    <result column="graduateEmail" property="graduateemail" jdbcType="CHAR" />
+    <result column="masterSkill" property="masterskill" jdbcType="CHAR" />
+    <result column="practicalExperience" property="practicalexperience" jdbcType="CHAR" />
+    <result column="classId" property="classid" jdbcType="CHAR" />
+    <result column="motto" property="motto" jdbcType="CHAR" />
+    <result column="stu_logo" property="stuLogo" jdbcType="CHAR" />
+    <result column="Resume_file" property="resumeFile" jdbcType="CHAR" />
+    <result column="grade" property="grade" jdbcType="CHAR" />
+    <result column="institute" property="institute" jdbcType="CHAR" />
+    <result column="graduateyear" property="graduateyear" jdbcType="INTEGER" />
+    <result column="stupassword" property="stupassword" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    graduateId, graduateName, sex, age, major, graduatePhone, graduateEmail, masterSkill, 
+    practicalExperience, classId, motto, stu_logo, Resume_file, grade, institute, graduateyear, 
+    stupassword
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="teamB.GraduateJob.po.GraduateExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from graduate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from graduate
+    where graduateId = #{graduateid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from graduate
+    where graduateId = #{graduateid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="teamB.GraduateJob.po.GraduateExample" >
+    delete from graduate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="teamB.GraduateJob.po.Graduate" >
+    insert into graduate (graduateId, graduateName, sex, 
+      age, major, graduatePhone, 
+      graduateEmail, masterSkill, practicalExperience, 
+      classId, motto, stu_logo, Resume_file, 
+      grade, institute, graduateyear, 
+      stupassword)
+    values (#{graduateid,jdbcType=INTEGER}, #{graduatename,jdbcType=CHAR}, #{sex,jdbcType=CHAR}, 
+      #{age,jdbcType=INTEGER}, #{major,jdbcType=CHAR}, #{graduatephone,jdbcType=CHAR}, 
+      #{graduateemail,jdbcType=CHAR}, #{masterskill,jdbcType=CHAR}, #{practicalexperience,jdbcType=CHAR}, 
+      #{classid,jdbcType=CHAR}, #{motto,jdbcType=CHAR}, #{stuLogo,jdbcType=CHAR}, #{resumeFile,jdbcType=CHAR}, 
+      #{grade,jdbcType=CHAR}, #{institute,jdbcType=CHAR}, #{graduateyear,jdbcType=INTEGER}, 
+      #{stupassword,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="teamB.GraduateJob.po.Graduate" >
+    insert into graduate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="graduateid != null" >
+        graduateId,
+      </if>
+      <if test="graduatename != null" >
+        graduateName,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="major != null" >
+        major,
+      </if>
+      <if test="graduatephone != null" >
+        graduatePhone,
+      </if>
+      <if test="graduateemail != null" >
+        graduateEmail,
+      </if>
+      <if test="masterskill != null" >
+        masterSkill,
+      </if>
+      <if test="practicalexperience != null" >
+        practicalExperience,
+      </if>
+      <if test="classid != null" >
+        classId,
+      </if>
+      <if test="motto != null" >
+        motto,
+      </if>
+      <if test="stuLogo != null" >
+        stu_logo,
+      </if>
+      <if test="resumeFile != null" >
+        Resume_file,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="institute != null" >
+        institute,
+      </if>
+      <if test="graduateyear != null" >
+        graduateyear,
+      </if>
+      <if test="stupassword != null" >
+        stupassword,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="graduateid != null" >
+        #{graduateid,jdbcType=INTEGER},
+      </if>
+      <if test="graduatename != null" >
+        #{graduatename,jdbcType=CHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="major != null" >
+        #{major,jdbcType=CHAR},
+      </if>
+      <if test="graduatephone != null" >
+        #{graduatephone,jdbcType=CHAR},
+      </if>
+      <if test="graduateemail != null" >
+        #{graduateemail,jdbcType=CHAR},
+      </if>
+      <if test="masterskill != null" >
+        #{masterskill,jdbcType=CHAR},
+      </if>
+      <if test="practicalexperience != null" >
+        #{practicalexperience,jdbcType=CHAR},
+      </if>
+      <if test="classid != null" >
+        #{classid,jdbcType=CHAR},
+      </if>
+      <if test="motto != null" >
+        #{motto,jdbcType=CHAR},
+      </if>
+      <if test="stuLogo != null" >
+        #{stuLogo,jdbcType=CHAR},
+      </if>
+      <if test="resumeFile != null" >
+        #{resumeFile,jdbcType=CHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=CHAR},
+      </if>
+      <if test="institute != null" >
+        #{institute,jdbcType=CHAR},
+      </if>
+      <if test="graduateyear != null" >
+        #{graduateyear,jdbcType=INTEGER},
+      </if>
+      <if test="stupassword != null" >
+        #{stupassword,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="teamB.GraduateJob.po.GraduateExample" resultType="java.lang.Integer" >
+    select count(*) from graduate
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update graduate
+    <set >
+      <if test="record.graduateid != null" >
+        graduateId = #{record.graduateid,jdbcType=INTEGER},
+      </if>
+      <if test="record.graduatename != null" >
+        graduateName = #{record.graduatename,jdbcType=CHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=CHAR},
+      </if>
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.major != null" >
+        major = #{record.major,jdbcType=CHAR},
+      </if>
+      <if test="record.graduatephone != null" >
+        graduatePhone = #{record.graduatephone,jdbcType=CHAR},
+      </if>
+      <if test="record.graduateemail != null" >
+        graduateEmail = #{record.graduateemail,jdbcType=CHAR},
+      </if>
+      <if test="record.masterskill != null" >
+        masterSkill = #{record.masterskill,jdbcType=CHAR},
+      </if>
+      <if test="record.practicalexperience != null" >
+        practicalExperience = #{record.practicalexperience,jdbcType=CHAR},
+      </if>
+      <if test="record.classid != null" >
+        classId = #{record.classid,jdbcType=CHAR},
+      </if>
+      <if test="record.motto != null" >
+        motto = #{record.motto,jdbcType=CHAR},
+      </if>
+      <if test="record.stuLogo != null" >
+        stu_logo = #{record.stuLogo,jdbcType=CHAR},
+      </if>
+      <if test="record.resumeFile != null" >
+        Resume_file = #{record.resumeFile,jdbcType=CHAR},
+      </if>
+      <if test="record.grade != null" >
+        grade = #{record.grade,jdbcType=CHAR},
+      </if>
+      <if test="record.institute != null" >
+        institute = #{record.institute,jdbcType=CHAR},
+      </if>
+      <if test="record.graduateyear != null" >
+        graduateyear = #{record.graduateyear,jdbcType=INTEGER},
+      </if>
+      <if test="record.stupassword != null" >
+        stupassword = #{record.stupassword,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update graduate
+    set graduateId = #{record.graduateid,jdbcType=INTEGER},
+      graduateName = #{record.graduatename,jdbcType=CHAR},
+      sex = #{record.sex,jdbcType=CHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      major = #{record.major,jdbcType=CHAR},
+      graduatePhone = #{record.graduatephone,jdbcType=CHAR},
+      graduateEmail = #{record.graduateemail,jdbcType=CHAR},
+      masterSkill = #{record.masterskill,jdbcType=CHAR},
+      practicalExperience = #{record.practicalexperience,jdbcType=CHAR},
+      classId = #{record.classid,jdbcType=CHAR},
+      motto = #{record.motto,jdbcType=CHAR},
+      stu_logo = #{record.stuLogo,jdbcType=CHAR},
+      Resume_file = #{record.resumeFile,jdbcType=CHAR},
+      grade = #{record.grade,jdbcType=CHAR},
+      institute = #{record.institute,jdbcType=CHAR},
+      graduateyear = #{record.graduateyear,jdbcType=INTEGER},
+      stupassword = #{record.stupassword,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="teamB.GraduateJob.po.Graduate" >
+    update graduate
+    <set >
+      <if test="graduatename != null" >
+        graduateName = #{graduatename,jdbcType=CHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="major != null" >
+        major = #{major,jdbcType=CHAR},
+      </if>
+      <if test="graduatephone != null" >
+        graduatePhone = #{graduatephone,jdbcType=CHAR},
+      </if>
+      <if test="graduateemail != null" >
+        graduateEmail = #{graduateemail,jdbcType=CHAR},
+      </if>
+      <if test="masterskill != null" >
+        masterSkill = #{masterskill,jdbcType=CHAR},
+      </if>
+      <if test="practicalexperience != null" >
+        practicalExperience = #{practicalexperience,jdbcType=CHAR},
+      </if>
+      <if test="classid != null" >
+        classId = #{classid,jdbcType=CHAR},
+      </if>
+      <if test="motto != null" >
+        motto = #{motto,jdbcType=CHAR},
+      </if>
+      <if test="stuLogo != null" >
+        stu_logo = #{stuLogo,jdbcType=CHAR},
+      </if>
+      <if test="resumeFile != null" >
+        Resume_file = #{resumeFile,jdbcType=CHAR},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=CHAR},
+      </if>
+      <if test="institute != null" >
+        institute = #{institute,jdbcType=CHAR},
+      </if>
+      <if test="graduateyear != null" >
+        graduateyear = #{graduateyear,jdbcType=INTEGER},
+      </if>
+      <if test="stupassword != null" >
+        stupassword = #{stupassword,jdbcType=CHAR},
+      </if>
+    </set>
+    where graduateId = #{graduateid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="teamB.GraduateJob.po.Graduate" >
+    update graduate
+    set graduateName = #{graduatename,jdbcType=CHAR},
+      sex = #{sex,jdbcType=CHAR},
+      age = #{age,jdbcType=INTEGER},
+      major = #{major,jdbcType=CHAR},
+      graduatePhone = #{graduatephone,jdbcType=CHAR},
+      graduateEmail = #{graduateemail,jdbcType=CHAR},
+      masterSkill = #{masterskill,jdbcType=CHAR},
+      practicalExperience = #{practicalexperience,jdbcType=CHAR},
+      classId = #{classid,jdbcType=CHAR},
+      motto = #{motto,jdbcType=CHAR},
+      stu_logo = #{stuLogo,jdbcType=CHAR},
+      Resume_file = #{resumeFile,jdbcType=CHAR},
+      grade = #{grade,jdbcType=CHAR},
+      institute = #{institute,jdbcType=CHAR},
+      graduateyear = #{graduateyear,jdbcType=INTEGER},
+      stupassword = #{stupassword,jdbcType=CHAR}
+    where graduateId = #{graduateid,jdbcType=INTEGER}
+  </update>
+</mapper>

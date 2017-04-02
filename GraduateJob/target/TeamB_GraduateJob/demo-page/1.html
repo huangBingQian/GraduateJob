@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>1.1</title>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="css/company-home.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#add").click(function () {
+            $("#a").append('<table cellspacing="0" cellpadding="0">' +
+             '<tbody>' +
+                '<tr class="firstRow">' +
+                '<td width="100" style="text-align: center;border-width: 1px; border-color: windowtext; padding: 0px 7px;">'+
+                '<p>'+
+                '<strong><span style="font-family:宋体">学号</span></strong>'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">'+
+                '<p>'+
+                '<strong><span style="font-family:宋体">姓名</span></strong>'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">'+
+                '<p>'+
+                '<strong><span style="font-family:宋体">班级</span></strong>'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">'+
+                '<p>'+
+                '<strong><span style="font-family:宋体">成绩</span></strong>'+
+                '</p>'+
+                '</td>'+
+                '</tr>'+
+                '<tr>'+
+                '<td width="100" style="text-align:center;border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">'+
+                '<p>'+
+                '1000'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">'+
+                '<p>'+
+                '<span style="font-family:宋体">张三</span>'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">'+
+                '<p style="text-indent:0">'+
+                '&nbsp;<span style="font-family:宋体">自动化</span>3<span style="font-family:宋体">班</span>'+
+                '</p>'+
+                '</td>'+
+                '<td width="100" style="text-align:center;border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">'+
+                '<p>'+
+                '&nbsp;85'+
+                '</p>'+
+                '</td>'+
+                '</tr>'+
+                '</tbody>'+
+                '</table>')
+        })
+
+    });
+
+</script>
+
+
+<body>
+    <div id="a">
+        <button id="add">插入！</button>
+    </div>
+</body>
+</html>

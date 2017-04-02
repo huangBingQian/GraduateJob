@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@media (min-width: 768px) {
+    body{
+        background: #f2f2f2;
+    }
+    .container{
+        width: 1200px;
+    }
+    /*导航栏*/
+    .navbar {
+        border-top: 4px solid #0754da;
+        height: 60px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #D0D0D0;
+        z-index: 1000;
+    }
+    .navbar-header > img {
+        margin-right: 25px;
+        height: 35px;
+        width: auto;
+
+    }
+    .navbar-header {
+        padding-top: 10px;
+    }
+    .navbar .navbar-collapse > ul > li {
+        font-size: 20px;
+        line-height: 50px;
+        float: left;
+        margin-right: 30px;
+        font-weight: 500;
+    }
+    .navbar .navbar-collapse > ul > li > a {
+        padding-top: 18px;
+        color: #959595;
+    }
+
+    .navbar .navbar-collapse > ul > li > a:hover {
+        font-weight: 600;
+        color: #0841a8;
+    }
+
+    .navbar .user {
+        float: right!important;
+        margin-right: -15px;
+        position: relative;
+    }
+    .navbar .user > .user-logo{
+        margin-top: 5px;
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        border: 2px solid #adadad;
+        border-radius: 22px;
+        background-size: 45px;
+    }
+    .navbar .user > li > .name{
+        vertical-align: middle;
+        margin-left: -20px;
+        font-size: 17px;
+        color: #7b7b7b;
+    }
+    .navbar .user > li > span > img{
+        height: 16px;
+        width: auto;
+    }
+    .navbar .user > li > span > .msg-number{
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    .navbar .user > .user-info{
+        position: absolute;
+        top: 45px;
+        left: 25px;
+    }
+    .navbar .user > .user-info > ul > li{
+
+    }
+    .navbar .user:hover > .user-info{
+        display: block;
+    }
+    .navbar .user:hover > .user-logo{
+        border-color: #0754da;
+    }
+
+    .navbar .user > .user-info .title{
+        background-color: #ebebeb;
+    }
+    .navbar .user > .user-info .title > .user-logo{
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        background-color: #4cae4c;
+        display: block;
+    }
+    .navbar .user > .user-info .title > .user-info{
+        float: right;
+    }
+    .page-middle{
+        margin-top: 50px;
+    }
+    .page-middle .left{
+        float: left;
+        width: 290px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+        margin-top: 60px;
+    }
+    .page-middle .left img{
+        width: 200px;
+        height: auto;
+        margin: 40px auto 20px auto;
+        display: block;
+    }
+    .page-middle .left span,a{
+        text-align: center;
+    }
+    .page-middle .left .company-name{
+        color: #284597;
+        font-size: 20px;
+        font-weight: 600;
+        display: block;
+    }
+    .page-middle .left .company-website{
+        font-size: 18px;
+        margin-bottom: 40px;
+        margin-top: 10px;
+        display: block;
+    }
+    .page-middle .left .left-menu li{
+        border-bottom: 1px solid #adadad;
+        height: 70px;
+        width: 100%;
+        line-height: 70px;
+        color: #6a6a6a;
+
+    }
+    .page-middle .left .left-menu li:nth-child(1){
+        border-top: 1px solid #adadad;
+
+    }
+    .page-middle .left .left-menu .active{
+        background-color: #345ac4;
+        color: #ffffff;
+    }
+
+    .page-middle .left .left-menu li a{
+        font-size: 24px;
+        text-align: center;
+        display: block;
+    }
+    .page-middle .content{
+        float: right;
+        margin-top: 60px;
+        width: 910px;
+        background-color: #ffffff;
+        border: 1px solid #adadad;
+        padding-bottom: 50px;
+
+    }
+
+    .page-end {
+        margin-top: 70px;
+        margin-bottom: 0px;
+        height: 220px;
+        font-size: 18px;
+        line-height: 60px;
+        color: #ffffff;
+        background-color: #284597;
+    }
+}

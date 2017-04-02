@@ -1,0 +1,79 @@
+@charset "utf-8";
+.content{
+	height:auto !important;
+}
+.main_right{
+	display:inline-block;
+	width:97%;
+	float:right;
+	padding-top:20px;
+	height:100%
+}
+.right_head{
+	width:99.9%;
+	padding-top:5px;
+	padding-left:10px;
+	padding-bottom:1px;
+	margin-bottom:20px;
+	background:rgba(240,240,238,1.00);
+}
+.basic,.contact,.edu_background,.languagable,.certificate,.skill,.practice,.project,.job_hunting_exp,.job_purpose,.other{
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.basic table{
+	clear:both;
+	margin-left:48px;
+}
+.basic td{
+	height:35px;
+	padding-left:20px;
+	width:150px;
+}
+.basic td p{
+	display:inline-block;
+	margin-left:20px;
+}
+.basic th{
+	height:150px;
+	width:120px;
+}
+.contact table{
+	clear:both;
+	margin-left:210px;
+}
+.contact td{
+	padding-left:38px;
+	padding-right:18px;
+}/*
+{
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+}
+{
+	width:150px;
+	padding-top:5px;
+	padding-bottom:5px;
+}*/
+.edu_background table,.job_hunting_exp table,.job_purpose table,.languagable table,.honor table,.practice table,.project table{
+	clear:both;
+	margin-left:40px;
+}
+.edu_background td,.job_hunting_exp td,.job_purpose td,.languagable td,.honor td,.practice td,.project td{
+	width:190px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.certificate table,.skill table{
+	margin-left:40px;
+}
+.certificate td,.skill td{
+	width:150px;
+}
+.page-end{
+	background:rgba(17,108,191,1.00);
+	margin-top:10px;
+	height:75px;
+	padding-top:30px;
+}

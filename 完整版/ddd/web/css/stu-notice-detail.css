@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.notice-content{
+    margin: 10px;
+    border-top: 1px solid #bfbfbf;
+    padding: 20px;
+}
